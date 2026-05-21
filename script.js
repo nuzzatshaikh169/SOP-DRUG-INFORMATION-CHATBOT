@@ -1,7 +1,4 @@
-function searchDrug() {
-
-    let drug = document.getElementById("drugInput").value.toLowerCase();
-
+// script.js
 
 const drugs = [
   {
@@ -298,20 +295,26 @@ const drugs = [
     sideEffects: "Dry skin",
     precautions: "Avoid pregnancy"
   }
-]; 
-    
-    if (drugs[drug]) {
+];
 
-        document.getElementById("drugName").innerText = drugs[drug].name;
-        document.getElementById("dosage").innerText = drugs[drug].dosage;
-        document.getElementById("uses").innerText = drugs[drug].uses;
-        document.getElementById("precautions").innerText = drugs[drug].precautions;
+// Search Function
+function searchDrug() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const resultDiv = document.getElementById("result");
 
-    } else {
+  const drug = drugs.find(d => d.name.toLowerCase() === input);
 
-        document.getElementById("drugName").innerText = "Drug Not Found";
-        document.getElementById("dosage").innerText = "-";
-        document.getElementById("uses").innerText = "-";
-        document.getElementById("precautions").innerText = "-";
-    }
+  if (drug) {
+    resultDiv.innerHTML = `
+      <div class="drug-card">
+        <h2>${drug.name}</h2>
+        <p><strong>Dosage:</strong> ${drug.dosage}</p>
+        <p><strong>Uses:</strong> ${drug.uses}</p>
+        <p><strong>Side Effects:</strong> ${drug.sideEffects}</p>
+        <p><strong>Precautions:</strong> ${drug.precautions}</p>
+      </div>
+    `;
+  } else {
+    resultDiv.innerHTML = `<p>Drug not found.</p>`;
+  }
 }
