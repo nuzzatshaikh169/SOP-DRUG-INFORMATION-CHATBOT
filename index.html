@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug Information Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SOP MITVPU</h1>
+        <h3>Designed by Rashmit, Nuzzat, Nipun</h3>
+        <p>Mentored by Dr. Shradha Tiwari</p>
+    </header>
+
+    <section class="search-section">
+        <input type="text" id="drugInput" placeholder="Search Drug Name...">
+        <button onclick="searchDrug()">Search</button>
+    </section>
+
+    <section class="result-container">
+
+        <!-- Drug Name -->
+        <div class="result-card">
+            <h2>Drug Name</h2>
+            <p id="drugName">Enter a drug name</p>
+        </div>
+
+        <!-- Dosage -->
+        <div class="result-card">
+            <h2>Dosage</h2>
+            <p id="dosage">Dosage will appear here</p>
+        </div>
+
+        <!-- Uses -->
+        <div class="result-card">
+            <h2>Uses</h2>
+            <p id="uses">Uses will appear here</p>
+        </div>
+
+        <!-- Side Effects -->
+        <div class="result-card">
+            <h2>Side Effects</h2>
+            <p id="sideEffects">Side effects will appear here</p>
+        </div>
+
+        <!-- Precautions -->
+        <div class="result-card">
+            <h2>Precautions</h2>
+            <p id="precautions">Precautions will appear here</p>
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
